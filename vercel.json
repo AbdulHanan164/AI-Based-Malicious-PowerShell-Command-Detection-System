@@ -1,0 +1,19 @@
+{
+  "experimentalServices": [
+    {
+      "name": "frontend",
+      "src": "frontend",
+      "framework": "vite",
+      "buildCommand": "npm run build",
+      "outputDirectory": "dist",
+      "installCommand": "npm install"
+    },
+    {
+      "name": "backend",
+      "src": "backend",
+      "framework": "fastapi",
+      "buildCommand": "pip install -r requirements.txt",
+      "startCommand": "uvicorn main:app --host 0.0.0.0 --port $PORT"
+    }
+  ]
+}

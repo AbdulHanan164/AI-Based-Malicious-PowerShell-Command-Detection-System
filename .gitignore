@@ -43,8 +43,7 @@ desktop.ini
 *.key
 secrets.json
 
-# ── ML Model files (large binaries — store with Git LFS or separately) ──
-*.pkl
-*.joblib
+# ── ML Model files ────────────────────────────────────
+# .pkl models are small (<100KB) and tracked directly in git
 *.h5
 *.model
