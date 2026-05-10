@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cyan:    #00f5ff;
+    --purple:  #a855f7;
+    --pink:    #ec4899;
+    --green:   #00ff88;
+    --red:     #ff3860;
+    --orange:  #ff9500;
+    --gold:    #ffd700;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #020817;
+    color: #e2e8f0;
+    font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Orbitron', monospace;
+  }
+
+  .font-mono, code, pre, textarea {
+    font-family: 'JetBrains Mono', monospace !important;
+  }
+
+  .font-rajdhani {
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #020817; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00f5ff55, #a855f755);
+    border-radius: 3px;
+  }
+}
+
+@layer utilities {
+  /* ── Glow boxes ── */
+  .glow-cyan   { box-shadow: 0 0 25px #00f5ff30, 0 0 60px #00f5ff10; }
+  .glow-purple { box-shadow: 0 0 25px #a855f730, 0 0 60px #a855f710; }
+  .glow-pink   { box-shadow: 0 0 25px #ec489930, 0 0 60px #ec489910; }
+  .glow-red    { box-shadow: 0 0 25px #ff386030, 0 0 60px #ff386010; }
+  .glow-green  { box-shadow: 0 0 25px #00ff8830, 0 0 60px #00ff8810; }
+  .glow-orange { box-shadow: 0 0 25px #ff950030, 0 0 60px #ff950010; }
+  .glow-gold   { box-shadow: 0 0 25px #ffd70030, 0 0 60px #ffd70010; }
+
+  /* ── Glow text ── */
+  .text-glow-cyan   { text-shadow: 0 0 20px #00f5ffaa, 0 0 40px #00f5ff44; }
+  .text-glow-purple { text-shadow: 0 0 20px #a855f7aa, 0 0 40px #a855f744; }
+  .text-glow-pink   { text-shadow: 0 0 20px #ec4899aa, 0 0 40px #ec489944; }
+  .text-glow-green  { text-shadow: 0 0 20px #00ff88aa, 0 0 40px #00ff8844; }
+  .text-glow-red    { text-shadow: 0 0 20px #ff3860aa, 0 0 40px #ff386044; }
+  .text-glow-gold   { text-shadow: 0 0 20px #ffd700aa, 0 0 40px #ffd70044; }
+
+  /* ── Grid / scanline backgrounds ── */
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(0,245,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,245,255,0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  .grid-bg-purple {
+    background-image:
+      linear-gradient(rgba(168,85,247,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(168,85,247,0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 3px,
+      rgba(0,245,255,0.012) 3px, rgba(0,245,255,0.012) 6px
+    );
+  }
+
+  /* ── Glass cards ── */
+  .glass {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .glass-cyan {
+    background: rgba(0,245,255,0.04);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0,245,255,0.15);
+  }
+  .glass-purple {
+    background: rgba(168,85,247,0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(168,85,247,0.2);
+  }
+  .glass-pink {
+    background: rgba(236,72,153,0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(236,72,153,0.2);
+  }
+
+  /* ── Gradient text ── */
+  .gradient-text-cyber {
+    background: linear-gradient(135deg, #00f5ff, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-text-gold {
+    background: linear-gradient(135deg, #ffd700, #ff9500, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-text-green {
+    background: linear-gradient(135deg, #00ff88, #00f5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Borders ── */
+  .border-glow-cyan   { border-color: rgba(0,245,255,0.3); }
+  .border-glow-purple { border-color: rgba(168,85,247,0.3); }
+
+  /* ── Neon button ── */
+  .btn-cyber {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #00f5ff22, #a855f722);
+    border: 1px solid rgba(0,245,255,0.4);
+    color: #00f5ff;
+    transition: all 0.3s;
+  }
+  .btn-cyber:hover {
+    background: linear-gradient(135deg, #00f5ff33, #a855f733);
+    box-shadow: 0 0 30px #00f5ff30, 0 0 60px #00f5ff10;
+    border-color: rgba(0,245,255,0.7);
+  }
+  .btn-cyber::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s;
+  }
+  .btn-cyber:hover::before { left: 120%; }
+
+  /* ── Timeline connector ── */
+  .timeline-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .timeline-dot::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulse-dot 2s infinite;
+  }
+
+  /* ── Hex badge ── */
+  .hex-badge {
+    clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  }
+}
+
+/* ── Keyframe animations ── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-18px); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes data-stream {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.4; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-float    { animation: float 6s ease-in-out infinite; }
+.animate-float-d2 { animation: float 6s ease-in-out 2s infinite; }
+.animate-float-d4 { animation: float 6s ease-in-out 4s infinite; }
+.animate-rotate-slow { animation: rotate-slow 20s linear infinite; }
+.animate-flicker  { animation: flicker 4s infinite; }
+.animate-shimmer  {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
